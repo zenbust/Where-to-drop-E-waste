@@ -1,0 +1,17 @@
+.top-header {
+    background-color: rgb(58, 68, 68);
+}
+
+.Name{
+    color: white;
+    padding: 15px;
+    font-size: larger;
+    display: inline-block;
+    font: bold;
+}
+.serch{
+    color: white;
+}
+.P{
+
+}
