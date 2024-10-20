@@ -1,23 +1,15 @@
 const express = require('express');
-const { MongoClient } = require('mongodb');
+const { connectDB, getCenters } = require('./db');
 const cors = require('cors');
 const app = express();
 const port = 3000;
 
 app.use(cors());
 
-const uri = 'mongodb://localhost:27017';
-const client = new MongoClient(uri);
-
-async function connectDB() {
-    try {
-        await client.connect();
-        console.log("Connected to MongoDB");
-    } catch (err) {
-        console.error(err);
-    }
-}
-connectDB();
+connectDB().catch(err => {
+    console.error("Database connection failed:", err);
+    process.exit(1);
+});
 
 app.get('/centers', async (req, res) => {
     try {
@@ -32,6 +24,9 @@ app.get('/centers', async (req, res) => {
 app.get('/centers/search', async (req, res) => {
     const query = req.query.q;
     try {
+        const db = client.db('Where-To-Drop-E-Waste');
+        const collection = db.collection('centers');
+
         const centers = await collection.find({
             $or: [
                 { name: { $regex: query, $options: 'i' } },

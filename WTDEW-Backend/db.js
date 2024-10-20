@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI; // Ensure this is set in your .env file
 const client = new MongoClient(uri);
 
 async function connectDB() {
@@ -14,9 +14,9 @@ async function connectDB() {
     }
 }
 
-async function getStations() {
-    const db = client.db('Where-To-Drop-E-Waste');
-    const collection = db.collection('Center');
+async function getCenters() { // This function should fetch all centers
+    const db = client.db('Where-To-Drop-E-Waste'); // Make sure the DB name matches
+    const collection = db.collection('centers'); // Make sure the collection name matches
     return await collection.find({}).toArray();
 }
 
@@ -27,6 +27,6 @@ async function closeDB() {
 
 module.exports = {
     connectDB,
-    getStations,
+    getCenters,
     closeDB,
 };
