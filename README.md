@@ -1,8 +1,6 @@
 # Where-to-drop-E-waste
 IS Project
 
-# Project Name: Where to Drop E-Waste
-
 ## Dependencies
 
 This project requires the following Node.js packages:
