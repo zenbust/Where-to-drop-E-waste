@@ -1,17 +1,55 @@
-.top-header {
-    background-color: rgb(58, 68, 68);
+#map { height: 580px; }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
-
-.Name{
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: grey;
     color: white;
-    padding: 15px;
-    font-size: larger;
-    display: inline-block;
-    font: bold;
+    position: relative; /* Position relative for the suggestions */
 }
-.serch{
+.Name {
+    font-size: 24px;
+    margin-right: 20px;
+}
+.Place {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    width: 300px; /* Adjust width as needed */
+}
+.SearchButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3;
     color: white;
+    cursor: pointer;
 }
-.P{
-
+.suggestions-container {
+    position: absolute;
+    top: 100%; /* Align with the bottom of the input */
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px ;
+    border-radius: 5px;
+    z-index: 1000;
+    max-height: 1000px; /* Limit height */
+    overflow-y: auto; /* Scroll if necessary */
+    
+}
+.suggestion {
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+}
+.suggestion:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
 }
