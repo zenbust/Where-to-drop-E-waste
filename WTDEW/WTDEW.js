@@ -1,3 +1,30 @@
+const locationInfo = document.getElementById('location-info');
+
+const locationsData = [
+    { name: "Triam Udom Suksa Patthanakarn, Nonthaburi", coords: [13.848, 100.443139], details: "Description of this location.",benefits:"benefits",tel:"08X-XXX-XXXX" },
+    { name: "Central Plaza, Nonthaburi", coords: [13.873, 100.524], details: "Description of this location." ,details: "Description of this location.",benefits:"benefits",tel:"08X-XXX-XXXX"},
+    { name: "Central Plaza, wesgate", coords: [13.878247, 100.41001], details: "Description of this location." ,details: "Description of this location.",benefits:"benefits",tel:"08X-XXX-XXXX"},
+
+    // Add additional locations here
+];
+
+locationsData.forEach(location => {
+    const marker = L.marker(location.coords, { icon: markerIcon }).addTo(map);
+    marker.on('click', () => {
+        locationInfo.style.display = 'block';
+        locationInfo.innerHTML = `<h3>${location.name}</h3>
+        <p>${location.details}</p>
+        <p>${location.benefits}</p>
+        <p>${location.tel}</p>`;
+    });
+});
+
+// Optional: Hide the box when clicking elsewhere
+map.on('click', () => {
+    locationInfo.style.display = 'none';
+});
+//
+
 src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
@@ -44,3 +71,4 @@ document.querySelector('.place').addEventListener('input', (event) => {
 });
 
 window.onload = () => fetchCenters();
+

@@ -1,4 +1,4 @@
-#map { height: 580px; }
+#map { height: 594px; }
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -52,4 +52,43 @@ header {
 }
 .suggestion:hover {
     background-color: #f0f0f0; /* Highlight on hover */
+}
+.LineOA{
+    position: absolute;
+    right: 20px;
+    background-color: grey;
+    border: none;
+    color: white;
+}
+#centerButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: grey;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    z-index: 1000;
+    
+}
+img{
+    width: 25px;
+    height: 25px;
+}
+.location-info {
+    position: absolute;
+    top: 70px; /* Adjust positioning as needed */
+    right: 20px;
+    width: 250px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+.location-info h3 {
+    margin-top: 0;
 }
