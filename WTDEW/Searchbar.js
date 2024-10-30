@@ -4,7 +4,8 @@ const locations = [
     "Future Park Rangsit, Pathum Thani",
     "Big C, Ratchaphruek",
     "Home Pro, Nonthaburi",
-    "โรงเรียนเตรียมอุดมศึกษาพัฒนาการนนทบุรี"
+    "โรงเรียนเตรียมอุดมศึกษาพัฒนาการนนทบุรี",
+    "Central Plaza Wasgate"
 ];
 
 function showSuggestions(value) {
