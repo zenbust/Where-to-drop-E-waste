@@ -1,7 +1,7 @@
 const locationInfo = document.getElementById('location-info');
 
 const locationsData = [
-    { id: "672218eaca4aed83d3089d55", name: "Triam Udom Suksa Patthanakarn, Nonthaburi", coords: [13.848, 100.443139] },
+    { id: "672218eaca4aed83d3089d55", name: "Triam Udom Suksa Patthanakarn, Nonthaburi", coords: [13.844685509431802, 100.51079429811635] },
 
 ];
 
@@ -12,7 +12,7 @@ locationsData.forEach(location => {
 
         try {
             const response = await fetch(`http://localhost:3000/centers/${location.id}`);
-            console.log('Response:', response); // Debugging line
+            console.log('Response:', response);
             if (!response.ok) {
                 throw new Error('Failed to fetch center data');
             }
