@@ -1,5 +1,6 @@
 const express = require('express');
-const { connectDB, getCenters } = require('./db'); // Ensure you have a function to fetch centers
+const { ObjectId } = require('mongodb');
+const { connectDB, getCenters, getCenterById } = require('./db');
 const cors = require('cors');
 const app = express();
 const port = 3000;
@@ -20,6 +21,21 @@ app.get('/centers', async (req, res) => {
     } catch (err) {
         console.error("Error fetching centers:", err);
         res.status(500).json({ error: "Failed to fetch data" });
+    }
+});
+
+// Route to get center by ID
+app.get('/centers/:id', async (req, res) => {
+    const centerId = req.params.id;
+    try {
+        const center = await getCenterById(centerId); // Retrieves center by MongoDB ID
+        if (!center) {
+            return res.status(404).json({ error: "Center not found" });
+        }
+        res.json(center);
+    } catch (err) {
+        console.error("Error fetching center:", err);
+        res.status(500).json({ error: "Failed to fetch center data" });
     }
 });
 

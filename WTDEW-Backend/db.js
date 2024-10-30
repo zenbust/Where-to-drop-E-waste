@@ -1,6 +1,5 @@
 require('dotenv').config();
-const { MongoClient } = require('mongodb');
-
+const { MongoClient, ObjectId } = require('mongodb'); // Import ObjectId
 const uri = process.env.MONGODB_URI; // Ensure this is set in your .env file
 const client = new MongoClient(uri);
 
@@ -20,6 +19,12 @@ async function getCenters() { // This function should fetch all centers
     return await collection.find({}).toArray();
 }
 
+async function getCenterById(id) {
+    const db = client.db('Where-To-Drop-E-Waste'); // Define db here
+    const center = await db.collection('centers').findOne({ _id: new ObjectId(id) });
+    return center;
+}
+
 async function closeDB() {
     await client.close();
     console.log("MongoDB connection closed");
@@ -28,5 +33,6 @@ async function closeDB() {
 module.exports = {
     connectDB,
     getCenters,
+    getCenterById, // Export the function
     closeDB,
 };
