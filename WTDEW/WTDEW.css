@@ -1,4 +1,8 @@
-#map { height: 594px; }
+#map { 
+    height: 650px;
+    position: relative;
+    z-index: 1; 
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -6,44 +10,67 @@ body {
     padding: 0;
 }
 header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: grey;
-    color: white;
-    position: relative; /* Position relative for the suggestions */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: transparent;
+        margin-top: 20px;
 }
 .Name {
     font-size: 24px;
     margin-right: 20px;
+    margin-left: 60px;
+
+    background-color: transparent;
+    border-radius:10px;
+    box-sizing: border-box;
+}
+.Logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 30px;
 }
 .Place {
-    padding: 10px;
-    border-radius: 5px;
+    position: absolute;
+    padding: 13px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 10px;
     border: 1px solid #ccc;
     margin-right: 5px;
-    width: 300px; /* Adjust width as needed */
+    width: 300px; 
 }
 .SearchButton {
+    position:absolute;
     padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #ccc;
     background-color: #0056b3;
     color: white;
     cursor: pointer;
+    margin-top: 9px;
+    margin-left: 327px;
+}
+.SearchImg{
+    width: 19px;
+    height: 19px;
 }
 .suggestions-container {
     position: absolute;
-    top: 100%; /* Align with the bottom of the input */
+    top: 62%; 
     left: 0;
     right: 0;
     background: white;
     border: 1px ;
     border-radius: 5px;
     z-index: 1000;
-    max-height: 1000px; /* Limit height */
-    overflow-y: auto; /* Scroll if necessary */
-    
+    max-height: 1000px;
+    overflow-y: auto; 
+    margin-left: 154px;
+    max-width: 310px;
 }
 .suggestion {
     padding: 10px;
@@ -51,34 +78,52 @@ header {
     cursor: pointer;
 }
 .suggestion:hover {
-    background-color: #f0f0f0; /* Highlight on hover */
+    background-color: #f0f0f0; 
+}
+.Contactus{
+    position: absolute;
+    font-size: 19px;
+    right: 85px;
+    top: 9%;
+    background-color: transparent;
+    color: green;
+    border-radius:10px;
+    box-sizing: border-box;
 }
 .LineOA{
     position: absolute;
-    right: 20px;
-    background-color: grey;
+    right: 40px;
+    background-color: transparent;
     border: none;
-    color: white;
+    color: white;  
+}
+
+.LineImg{
+    width: 40px;
+    height: 40px;
 }
 #centerButton {
     position: absolute;
     bottom: 20px;
     right: 20px;
     padding: 10px 15px;
-    background-color: grey;
+    background-color: #0056b3;
     border: none;
     border-radius: 100px;
     cursor: pointer;
     z-index: 1000;
-    
 }
-img{
+#centerButton:hover{
+    transform: scale(1.1);
+    background-color :#02448b ;
+}
+.CenterImg{
     width: 25px;
     height: 25px;
 }
 .location-info {
     position: absolute;
-    top: 70px; /* Adjust positioning as needed */
+    top: 70px; 
     right: 20px;
     width: 250px;
     padding: 15px;
@@ -86,7 +131,7 @@ img{
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none; /* Hidden by default */
+    display: none; 
     z-index: 1000;
 }
 .location-info h3 {

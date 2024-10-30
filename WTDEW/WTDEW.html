@@ -21,11 +21,18 @@
 
     <body>
         <header class="top-header">
-            <a class="Name">Where To Drop E-Waste</a>
-            <input id="Search" class="Place" type="text" placeholder="Search for a location" oninput="showSuggestions(this.value)">
-            <button class="SearchButton">Find</button>
-            <a class="LineOA" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" >
-                <img src="https://github.com/Newwich/WTDEW/blob/main/LineLogo.png?raw=true"  >
+            <a class="Name">
+                <img class="Logo" src="https://github.com/Newwich/WTDEW/blob/main/E-waste.jpg?raw=true" >
+            </a>
+            <h>
+                <input id="Search" class="Place" type="text" placeholder="Search for a location" oninput="showSuggestions(this.value)">
+                <button class="SearchButton">
+                    <img class="SearchImg" src="https://github.com/Newwich/WTDEW/blob/main/Search.png?raw=true" >
+                </button>
+            </h>
+            <a class="Contactus">ติดต่อเรา</a>
+            <a class="LineOA" href="https://lin.ee/s4pTIUF" target="blank" >
+                <img class="LineImg" src="https://github.com/Newwich/WTDEW/blob/main/LineLogo.png?raw=true"  >
             </a>
             <div id="suggestions" class="suggestions-container"></div>
         </header>
@@ -33,7 +40,7 @@
         <div id="map"></div>
         <div id="centers-list"></div>
         <div id="location-info" class="location-info"></div>
-        <button id="centerButton" onclick="backToCenter()"><img src="https://github.com/Newwich/WTDEW/blob/main/Back_To_Center.png?raw=true" >
+        <button id="centerButton" onclick="backToCenter()"><img class="CenterImg"src="https://github.com/Newwich/WTDEW/blob/main/Back_To_Center.png?raw=true" >
         </button>
 
     </body>
@@ -44,7 +51,7 @@
             {maxZoom: 19,attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
             
             const markerIcon = L.icon({
-                iconUrl: 'https://github.com/Newwich/WTDEW/blob/main/Marker%20Icon.png?raw=true', // Our custom marker image
+                iconUrl: 'https://github.com/Newwich/WTDEW/blob/main/Marker%20Icon.png?raw=true', 
                 iconSize: [40, 40],
                 iconAnchor: [20, 37],
                 popupAnchor: [1, -34],

@@ -10,9 +10,9 @@ const locations = [
 
 function showSuggestions(value) {
     const suggestionsContainer = document.getElementById('suggestions');
-    suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+    suggestionsContainer.innerHTML = ''; 
 
-    if (value.length === 0) return; // Don't show suggestions if input is empty
+    if (value.length === 0) return; 
 
     const filteredSuggestions = locations.filter(item => 
         item.toLowerCase().includes(value.toLowerCase())
@@ -23,8 +23,8 @@ function showSuggestions(value) {
         suggestionItem.classList.add('suggestion');
         suggestionItem.textContent = item;
         suggestionItem.onclick = () => {
-            document.getElementById('Search').value = item; // Set input value
-            suggestionsContainer.innerHTML = ''; // Clear suggestions
+            document.getElementById('Search').value = item; 
+            suggestionsContainer.innerHTML = ''; 
         };
         suggestionsContainer.appendChild(suggestionItem);
     });
