@@ -20,6 +20,7 @@
     </head>
 
     <body>
+        
         <header class="top-header">
             <a class="Name">
                 <img class="Logo" src="https://github.com/Newwich/WTDEW/blob/main/E-waste.jpg?raw=true" >
@@ -30,13 +31,28 @@
                     <img class="SearchImg" src="https://github.com/Newwich/WTDEW/blob/main/Search.png?raw=true" >
                 </button>
             </h>
-            <a class="Contactus">ติดต่อเรา</a>
+            <button id="infoButton" class="E-WasteInfo">
+                <img class="InfoImg" src="https://github.com/Newwich/WTDEW/blob/main/info.png?raw=true">
+            </button>
+            <a class="infocontainer"></a>
+            <a class="Contactus" href="https://lin.ee/s4pTIUF" target="blank">ติดต่อเรา</a>
             <a class="LineOA" href="https://lin.ee/s4pTIUF" target="blank" >
                 <img class="LineImg" src="https://github.com/Newwich/WTDEW/blob/main/LineLogo.png?raw=true"  >
             </a>
             <div id="suggestions" class="suggestions-container"></div>
+            <div id="suggestions" class="suggestions-container"></div>
         </header>
-    
+        <div class="popup" id="popup">
+            <div class="popup-header">
+                <div class="title">EXEMPLE</div>
+                <button class="closePopup" id="closePopup">&times;</button>
+            </div>
+            <div class="popup-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi alias, beatae enim tempore sit aliquam. Reiciendis dignissimos quis tenetur nesciunt dolore doloribus incidunt nobis aliquam, omnis distinctio. Cupiditate sint eos corrupti voluptates, odio id temporibus sit quis blanditiis voluptatibus laudantium aspernatur porro enim omnis recusandae quisquam aliquam magni tenetur deserunt deleniti consequuntur praesentium debitis libero? Nisi perferendis quia aut fuga molestiae. Labore odit commodi, assumenda error quod beatae dolores molestias aliquam reiciendis quos incidunt ea alias explicabo id, molestiae quasi laudantium, pariatur facilis quam odio. Fugiat ipsa iure nostrum perspiciatis?</div>
+        </div>
+        <div id="popupOverlay" class="popup-overlay"></div>
+        
+        
+
         <div id="map"></div>
         <div id="centers-list"></div>
         <div id="location-info" class="location-info"></div>
@@ -48,7 +64,7 @@
         <script>
             var map = L.map('map').setView([13.848,100.443139], 15);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            {maxZoom: 19,attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+            {maxZoom: 19,attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map) ;
             
             const markerIcon = L.icon({
                 iconUrl: 'https://github.com/Newwich/WTDEW/blob/main/Marker%20Icon.png?raw=true', 
@@ -59,9 +75,11 @@
 
             L.marker([13.848,100.443139], { icon: markerIcon }).addTo(map).bindPopup('TriamUdonSuksaPatthanakarn Nonthaburi')
             ;
+            
             function backToCenter() {
                 map.setView([13.848, 100.443139], 15); 
             }
+            map.zoomControl.setPosition('bottomleft');
         </script>
         <script src="Searchbar.js"></script>
         <script src="WTDEW.js"></script>

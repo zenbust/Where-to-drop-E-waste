@@ -1,3 +1,23 @@
+const infoButton = document.getElementById("infoButton");
+    const popup = document.getElementById("popup");
+    const popupOverlay = document.getElementById("popupOverlay");
+    const closePopup = document.getElementById("closePopup");
+
+    infoButton.addEventListener("click", function() {
+        popup.classList.add("show");
+        popupOverlay.classList.add("show");
+    });
+
+    closePopup.addEventListener("click", function() {
+        popup.classList.remove("show");
+        popupOverlay.classList.remove("show");
+    });
+
+    popupOverlay.addEventListener("click", function() {
+        popup.classList.remove("show");
+        popupOverlay.classList.remove("show");
+    });
+//
 const locationInfo = document.getElementById('location-info');
 
 const locationsData = [
@@ -110,3 +130,4 @@ document.querySelector('.place').addEventListener('input', (event) => {
 
 // Fetch centers when the window loads
 window.onload = () => fetchCenters();
+
