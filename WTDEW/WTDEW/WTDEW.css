@@ -1,14 +1,8 @@
-.map-wrapper {
-    position: fi;
-  }
-  
-  #map {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+#map { 
+    height: 650px;
+    position: relative;
+    z-index: 1; 
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -78,8 +72,8 @@ header {
     height: 19px;
 }
 .suggestions-container {
-    position: relative;
-    top: 70%; 
+    position: fixed;
+    top: 11.425%; 
     left: 0;
     right: 0;
     background: white;
@@ -88,7 +82,7 @@ header {
     z-index: 1000;
     max-height: 1000px;
     overflow-y: auto; 
-    margin-left: 160px;
+    margin-left: 119px;
     max-width: 320px;
 }
 .suggestion {
@@ -108,7 +102,7 @@ header {
     color: green;
     border-radius:10px;
     box-sizing: border-box;
-    margin-top: 5px;
+    margin-top: 13px;
     text-decoration: none;
 }
 .LineOA{
@@ -140,6 +134,7 @@ header {
     right: 20px;
     border-radius: 20px;
     width: 100px;  
+    
 }
 .LineImg{
     width: 40px;
@@ -170,23 +165,25 @@ header {
 }
 .location-info {
     position: absolute;
-    top: 70px; 
+    top: 80px; 
     right: 20px;
     width: 250px;
     padding: 15px;
-    background-color: white;
+    background-color: rgba(255,255,255,.8);
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     display: none; 
     z-index: 1000;
+    height: 71.5%;
+    ;
 }
 .location-info h3 {
     margin-top: 0;
 }
 /* สไตล์พื้นหลังเบลอ */
 .popup-overlay {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -195,41 +192,68 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 5;
     opacity: 0;
-    transition: 200ms ease-in-out; /* ให้ความนุ่มนวล */
+    transition: opacity 200ms ease-in-out;
 }
 
-.popup{
+/* Active state for overlay */
+.popup-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.popup {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%)scale(0);
-    border: 1px solid black;
+    transform: translate(-50%, -50%) scale(0);
     border-radius: 10px;
-    z-index: 10;
     background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    max-width: 90%;
+    width: 400px;
+    transition: transform 100ms ease-in-out;
 }
-.popup-header{
-    padding: 10px 15px;
+
+/* Active state for popup */
+.popup-overlay.active .popup {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
-.popup-header .title{
+
+.popup-header .title {
     font-size: 1.25rem;
     font-weight: bold;
+    color: #333;
 }
-.popup .closePopup{
+
+.popup .closePopup {
     cursor: pointer;
     border: none;
     outline: none;
     background: none;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: #666;
+    transition: color 200
 }
+.popup .closePopup:hover {
+    background-color: lightgrey;
 
+}
 .popup-body{
-    padding: 10px 15px;
+    padding: 15px;
+    ;
 }
 /* สไตล์เปิดป็อปอัป */
 .popup.show {

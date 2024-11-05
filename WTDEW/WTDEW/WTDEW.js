@@ -25,7 +25,8 @@ const locations = [
     "Big C, Ratchaphruek",
     "Home Pro, Nonthaburi",
     "โรงเรียนเตรียมอุดมศึกษาพัฒนาการนนทบุรี",
-    "Central Plaza Wasgate"
+    "Central Plaza Wasgate",
+    "ที่ทิ้งขยะใกล้ฉัน"
 ];
 
 function showSuggestions(value) {
