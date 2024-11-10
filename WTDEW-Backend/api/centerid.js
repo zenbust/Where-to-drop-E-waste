@@ -1,6 +1,9 @@
 const { getCenterById } = require('../db');
 
 module.exports = async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     const centerId = req.query.id;
     try {
         const center = await getCenterById(centerId);
