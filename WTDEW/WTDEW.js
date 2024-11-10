@@ -96,16 +96,7 @@ map.on('click', () => {
     locationInfo.style.display = 'none';
 });
 
-let latitude = null;
-let longitude = null;
-
 let marker = L.marker([latitude, longitude]).addTo(map);
-
-if (latitude !== null && longitude !== null) {
-    let marker = L.marker([latitude, longitude]).addTo(map);
-} else {
-    console.warn("Latitude and longitude have not been set yet.");
-}
 
 marker.on('click', async () => {
     locationInfo.style.display = 'block';
