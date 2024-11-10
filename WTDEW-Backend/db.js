@@ -5,16 +5,14 @@ const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
 async function connectDB() {
-    if (!client.isConnected()) {
-        try {
-            await client.connect();
-            console.log("Connected to MongoDB");
-        } catch (err) {
-            console.error("Failed to connect to MongoDB:", err);
-            throw err;
-        }
+    try {
+        await client.connect();
+        console.log("Connected to MongoDB");
+        return client.db('Where-To-Drop-E-Waste');
+    } catch (err) {
+        console.error("Failed to connect to MongoDB:", err);
+        throw err;
     }
-    return client.db('Where-To-Drop-E-Waste');
 }
 
 async function getCenters() {
