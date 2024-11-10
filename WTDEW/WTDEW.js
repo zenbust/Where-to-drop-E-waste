@@ -17,7 +17,7 @@ const infoButton = document.getElementById("infoButton");
         popup.classList.remove("show");
         popupOverlay.classList.remove("show");
     });
-//
+
 const locations = [
     "Triam Udon Suksa Patthanakarn, Nonthaburi",
     "Central Plaza, Nonthaburi",
@@ -50,7 +50,7 @@ function showSuggestions(value) {
         suggestionsContainer.appendChild(suggestionItem);
     });
 }
-//
+
 const locationInfo = document.getElementById('location-info');
 
 const locationsData = [
@@ -92,23 +92,23 @@ locationsData.forEach(location => {
     });
 });
 
-// Optional: Hide the box when clicking elsewhere
 map.on('click', () => {
     locationInfo.style.display = 'none';
 });
+
+let marker = L.marker([latitude, longitude]).addTo(map);
 
 marker.on('click', async () => {
     locationInfo.style.display = 'block';
 
     try {
         const response = await fetch(`https://where-to-drop-e-waste-jkva.vercel.app/api/centers/${location.id}`);
-        console.log('Response status:', response.status); // Log the response status
+        console.log('Response status:', response.status);
         if (!response.ok) {
             throw new Error('Failed to fetch center data');
         }
         const centerData = await response.json();
-        console.log('Center data:', centerData); // Log the center data
-
+        console.log('Center data:', centerData);
         locationInfo.innerHTML = `
             <h3>${centerData.name}</h3>
             <p>${centerData.details}</p>
@@ -120,12 +120,10 @@ marker.on('click', async () => {
     }
 });
 
-// Function to fetch e-waste collection centers from the backend
 async function fetchCenters(query = '') {
     const url = query
         ? `https://where-to-drop-e-waste-jkva.vercel.app/api/centers/search?q=${encodeURIComponent(query)}`
         : 'https://where-to-drop-e-waste-jkva.vercel.app/api/centers';
-
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -155,12 +153,10 @@ function displayCenters(centers) {
     });
 }
 
-// Search input event listener
 document.querySelector('.place').addEventListener('input', (event) => {
     const query = event.target.value;
     fetchCenters(query);
 });
 
-// Fetch centers when the window loads
 window.onload = () => fetchCenters();
 
