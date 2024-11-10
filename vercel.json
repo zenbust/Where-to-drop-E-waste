@@ -1,27 +1,34 @@
 {
-  "functions": {
-    "api/**.js": {
-      "maxDuration": 10,
-      "memory": 1024
+  "version": 2,
+  "builds": [
+    {
+      "src": "./WTDEW-Backend/api/centers.js",
+      "use": "@vercel/node"
     }
-  },
-  "routes": [
+  ],
+  "rewrites": [
     {
-      "src": "/api/centers/.*",
-      "headers": {
-        "Access-Control-Allow-Origin": "https://where-to-drop-e-waste.vercel.app",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type"
-      }
-    },
+      "source": "/api/centers/(.*)",
+      "destination": "/api/centers.js"
+    }
+  ],
+  "headers": [
     {
-      "src": "/api/centers",
-      "methods": ["OPTIONS", "GET", "POST"],
-      "headers": {
-        "Access-Control-Allow-Origin": "https://where-to-drop-e-waste.vercel.app",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type"
-      }
+      "source": "/api/centers/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://where-to-drop-e-waste.vercel.app"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type"
+        }
+      ]
     }
   ]
 }
