@@ -1,26 +1,30 @@
 require('dotenv').config();
-const { MongoClient, ObjectId } = require('mongodb'); // Import ObjectId
-const uri = process.env.MONGODB_URI; // Ensure this is set in your .env file
-const client = new MongoClient(uri);
+const { MongoClient, ObjectId } = require('mongodb');
+
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function connectDB() {
-    try {
-        await client.connect();
-        console.log("Connected to MongoDB");
-    } catch (err) {
-        console.error("Failed to connect to MongoDB:", err);
-        throw err;
+    if (!client.isConnected()) {
+        try {
+            await client.connect();
+            console.log("Connected to MongoDB");
+        } catch (err) {
+            console.error("Failed to connect to MongoDB:", err);
+            throw err;
+        }
     }
+    return client.db('Where-To-Drop-E-Waste');
 }
 
-async function getCenters() { // This function should fetch all centers
-    const db = client.db('Where-To-Drop-E-Waste'); // Make sure the DB name matches
-    const collection = db.collection('centers'); // Make sure the collection name matches
+async function getCenters() {
+    const db = await connectDB();
+    const collection = db.collection('centers');
     return await collection.find({}).toArray();
 }
 
 async function getCenterById(id) {
-    const db = client.db('Where-To-Drop-E-Waste'); // Define db here
+    const db = await connectDB();
     const center = await db.collection('centers').findOne({ _id: new ObjectId(id) });
     return center;
 }
@@ -33,6 +37,6 @@ async function closeDB() {
 module.exports = {
     connectDB,
     getCenters,
-    getCenterById, // Export the function
+    getCenterById,
     closeDB,
 };
