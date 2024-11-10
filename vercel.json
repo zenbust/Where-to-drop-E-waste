@@ -1,34 +1,21 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "./WTDEW-Backend/api/centers.js",
-      "use": "@vercel/node"
-    }
+      {
+          "src": "*.js",
+          "use": "@vercel/node"
+      }
   ],
-  "rewrites": [
-    {
-      "source": "/api/centers/(.*)",
-      "destination": "/api/centers.js"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/centers/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
-        }
-      ]
-    }
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "/",
+          "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+          "headers": {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Credentials": "true",
+              "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+          }
+      }
   ]
 }
