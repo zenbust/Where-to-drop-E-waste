@@ -99,6 +99,8 @@ map.on('click', () => {
 let latitude = null;
 let longitude = null;
 
+let marker = L.marker([latitude, longitude]).addTo(map);
+
 if (latitude !== null && longitude !== null) {
     let marker = L.marker([latitude, longitude]).addTo(map);
 } else {
