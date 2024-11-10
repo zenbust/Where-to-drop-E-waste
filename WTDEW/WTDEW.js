@@ -31,11 +31,11 @@ const locations = [
 
 function showSuggestions(value) {
     const suggestionsContainer = document.getElementById('suggestions');
-    suggestionsContainer.innerHTML = ''; 
+    suggestionsContainer.innerHTML = '';
 
-    if (value.length === 0) return; 
+    if (value.length === 0) return;
 
-    const filteredSuggestions = locations.filter(item => 
+    const filteredSuggestions = locations.filter(item =>
         item.toLowerCase().includes(value.toLowerCase())
     );
 
@@ -44,8 +44,8 @@ function showSuggestions(value) {
         suggestionItem.classList.add('suggestion');
         suggestionItem.textContent = item;
         suggestionItem.onclick = () => {
-            document.getElementById('Search').value = item; 
-            suggestionsContainer.innerHTML = ''; 
+            document.getElementById('Search').value = item;
+            suggestionsContainer.innerHTML = '';
         };
         suggestionsContainer.appendChild(suggestionItem);
     });
@@ -73,7 +73,7 @@ locationsData.forEach(location => {
         locationInfo.style.display = 'block';
 
         try {
-            const response = await fetch(`http://localhost:3000/centers/${location.id}`);
+            const response = await fetch(`https://where-to-drop-e-waste-jkva.vercel.app/api/centers/${location.id}`);
             console.log('Response:', response);
             if (!response.ok) {
                 throw new Error('Failed to fetch center data');
@@ -101,7 +101,7 @@ marker.on('click', async () => {
     locationInfo.style.display = 'block';
 
     try {
-        const response = await fetch(`http://localhost:3000/centers/${location.id}`);
+        const response = await fetch(`https://where-to-drop-e-waste-jkva.vercel.app/api/centers/${location.id}`);
         console.log('Response status:', response.status); // Log the response status
         if (!response.ok) {
             throw new Error('Failed to fetch center data');
@@ -123,8 +123,8 @@ marker.on('click', async () => {
 // Function to fetch e-waste collection centers from the backend
 async function fetchCenters(query = '') {
     const url = query
-        ? `http://localhost:3000/centers/search?q=${encodeURIComponent(query)}`
-        : 'http://localhost:3000/centers';
+        ? `https://where-to-drop-e-waste-jkva.vercel.app/api/centers/search?q=${encodeURIComponent(query)}`
+        : 'https://where-to-drop-e-waste-jkva.vercel.app/api/centers';
 
     try {
         const response = await fetch(url);
