@@ -88,6 +88,44 @@ locationsData.forEach(location => {
                 <button id="googleMapsButton">Open in Google Maps</button>
                 <button id="shareButton">Share</button>
             `;
+
+            document.getElementById("routeButton").addEventListener("click", () => {
+                const startCoords = [latitude, longitude];
+                const endCoords = location.coords;
+
+                L.Routing.control({
+                    waypoints: [
+                        L.latLng(startCoords),
+                        L.latLng(endCoords)
+                    ],
+                    router: new L.Routing.OSRMv1(),
+                    routeWhileDragging: true
+                }).addTo(map);
+            });
+
+            document.getElementById("googleMapsButton").addEventListener("click", () => {
+                const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.coords[0]},${location.coords[1]}`;
+                window.open(googleMapsUrl, '_blank');
+            });
+
+            document.getElementById("shareButton").addEventListener("click", () => {
+                if (navigator.share) {
+                    navigator.share({
+                        title: centerData.name,
+                        text: `Check out this e-waste collection center at ${centerData.name}.`,
+                        url: window.location.href
+                    }).catch(error => console.log('Error sharing:', error));
+                } else {
+                    const shareLink = document.createElement('textarea');
+                    shareLink.value = window.location.href;
+                    document.body.appendChild(shareLink);
+                    shareLink.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(shareLink);
+                    alert('Link copied to clipboard');
+                }
+            });
+
         } catch (error) {
             console.error('Error fetching center data:', error);
             locationInfo.innerHTML = 'Failed to load center information.';
@@ -155,44 +193,6 @@ function displayCenters(centers) {
         centersList.appendChild(centerItem);
     });
 }
-
-document.getElementById("routeButton").addEventListener("click", () => {
-    L.Routing.control({
-        waypoints: [
-            L.latLng(latitude, longitude),
-            L.latLng(location.coords[0], location.coords[1])
-        ],
-        router: new L.Routing.YOURS({
-            serviceUrl: 'https://www.yournavigation.org/api/1.0/gosmore.php',
-            options: {
-                vehicle: 'foot'
-            }
-        })
-    }).addTo(map);
-});
-
-document.getElementById("googleMapsButton").addEventListener("click", () => {
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.coords[0]},${location.coords[1]}`;
-    window.open(googleMapsUrl, '_blank');
-});
-
-document.getElementById("shareButton").addEventListener("click", () => {
-    if (navigator.share) {
-        navigator.share({
-            title: centerData.name,
-            text: `Check out this e-waste collection center at ${centerData.name}.`,
-            url: window.location.href
-        }).catch(error => console.log('Error sharing:', error));
-    } else {
-        const shareLink = document.createElement('textarea');
-        shareLink.value = window.location.href;
-        document.body.appendChild(shareLink);
-        shareLink.select();
-        document.execCommand('copy');
-        document.body.removeChild(shareLink);
-        alert('Link copied to clipboard');
-    }
-});
 
 document.querySelector('.place').addEventListener('input', (event) => {
     const query = event.target.value;
