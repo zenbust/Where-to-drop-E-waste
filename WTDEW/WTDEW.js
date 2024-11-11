@@ -84,24 +84,9 @@ locationsData.forEach(location => {
                 <p>${centerData.details}</p>
                 <p>${centerData.benefits}</p>
                 <p>${centerData.tel}</p>
-                <button id="routeButton">Route Here</button>
                 <button id="googleMapsButton">Open in Google Maps</button>
                 <button id="shareButton">Share</button>
             `;
-
-            document.getElementById("routeButton").addEventListener("click", () => {
-                const startCoords = [latitude, longitude];
-                const endCoords = location.coords;
-
-                L.Routing.control({
-                    waypoints: [
-                        L.latLng(startCoords),
-                        L.latLng(endCoords)
-                    ],
-                    router: new L.Routing.OSRMv1(),
-                    routeWhileDragging: true
-                }).addTo(map);
-            });
 
             document.getElementById("googleMapsButton").addEventListener("click", () => {
                 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.coords[0]},${location.coords[1]}`;
