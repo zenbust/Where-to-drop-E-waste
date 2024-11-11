@@ -80,12 +80,14 @@ locationsData.forEach(location => {
             }
             const centerData = await response.json();
             locationInfo.innerHTML = `
-                <h3>${centerData.name}</h3>
-                <p>${centerData.details}</p>
-                <p>${centerData.benefits}</p>
-                <p>${centerData.tel}</p>
-                <button id="googleMapsButton">Open in Google Maps</button>
-                <button id="shareButton">Share</button>
+                <div class="info-content">
+                    <h3>${centerData.name}</h3>
+                    <p>${centerData.details}</p>
+                    <p>${centerData.benefits}</p>
+                    <p>${centerData.tel}</p>
+                    <button class="googleMapsButton" id="googleMapsButton">Open in Google Maps</button>
+                    <button class="shareButton" id="shareButton">Share</button>
+                </div>
             `;
 
             document.getElementById("googleMapsButton").addEventListener("click", () => {
