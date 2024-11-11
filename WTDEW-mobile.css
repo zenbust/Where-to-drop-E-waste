@@ -41,7 +41,7 @@ nav {
     width: 200px; /* Reduced width */
 }
 .SearchButton {
-    position: relative;
+    position:absolute;
     padding: 8px 12px; /* Smaller padding */
     border: none;
     border-top-right-radius: 20px;
@@ -49,15 +49,15 @@ nav {
     background-color: #0056b3;
     color: white;
     cursor: pointer;
-    bottom: 2.2vh;
-    left: 34vh; /* Adjusted for smaller width */
+    top: 3vh;
+    left: 45.5vh; /* Adjusted for smaller width */
     
 }
 .E-WasteInfo {
     cursor: pointer;
     position: absolute;
     margin-top: 13px;
-    margin-left: 220px; /* Adjusted position */
+    margin-left: 42vh; /* Adjusted position */
     border: none;
     border-radius: 20px;
     width: auto;
@@ -72,7 +72,7 @@ nav {
     height: 18px; /* Smaller search icon */
 }
 .suggestions-container {
-    position: relative;
+    position:fixed;
     left: 0;
     right: 0;
     background: white;
@@ -82,7 +82,7 @@ nav {
     overflow-y: auto;
     left: 12vh; /* Adjusted margin */
     max-width: 40vh;
-    bottom: 2vh;
+    top:12vh;
 }
 .suggestion {
     padding: 10px;
