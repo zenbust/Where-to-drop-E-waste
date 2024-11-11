@@ -16,8 +16,10 @@
             function loadDeviceSpecificResources() {
                 if ('ontouchstart' in window || window.matchMedia("(pointer: coarse)").matches) {
                     document.getElementById("default-css").setAttribute("href", "WTDEW-mobile.css");
+                    console.log("Mobile CSS loaded");
                 } else {
                     document.getElementById("default-css").setAttribute("href", "WTDEW.css");
+                    console.log("Desktop CSS loaded");
                 }
             }
             window.addEventListener('resize', loadDeviceSpecificResources);
