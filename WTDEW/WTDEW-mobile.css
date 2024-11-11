@@ -41,7 +41,7 @@ nav {
     width: 200px; /* Reduced width */
 }
 .SearchButton {
-    position: absolute;
+    position: relative;
     padding: 8px 12px; /* Smaller padding */
     border: none;
     border-top-right-radius: 20px;
@@ -49,8 +49,9 @@ nav {
     background-color: #0056b3;
     color: white;
     cursor: pointer;
-    margin-top: 9px;
-    margin-left: 205px; /* Adjusted for smaller width */
+    bottom: 2.2vh;
+    left: 34vh; /* Adjusted for smaller width */
+    
 }
 .E-WasteInfo {
     cursor: pointer;
@@ -71,18 +72,17 @@ nav {
     height: 18px; /* Smaller search icon */
 }
 .suggestions-container {
-    position: fixed;
-    top: 15%; /* Adjusted to avoid overlap with header */
+    position: relative;
     left: 0;
     right: 0;
     background: white;
-    border: 1px solid #ccc;
     border-radius: 5px;
     z-index: 1000;
-    max-height: 300px; /* Limited height for mobile */
+    max-height: 300vh; /* Limited height for mobile */
     overflow-y: auto;
-    margin-left: 20px; /* Adjusted margin */
-    max-width: 90%;
+    left: 12vh; /* Adjusted margin */
+    max-width: 40vh;
+    bottom: 2vh;
 }
 .suggestion {
     padding: 10px;
@@ -106,8 +106,7 @@ nav {
 }
 .LineOA {
     position: fixed;
-    right: 20px;
-    bottom: 10px; /* Adjusted position */
+    right: 20px; /* Adjusted position */
     background-color: transparent;
     border: none;
     color: white;
@@ -133,7 +132,8 @@ nav {
     right: 20px;
     border-radius: 20px;
     width: 80px; /* Reduced width */
-    top: 5%;
+    
+    
 }
 .LineImg {
     width: 30px;
