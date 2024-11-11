@@ -1,5 +1,5 @@
 #map {
-    height: 60vh; /* Reduced map height for mobile devices */
+    height: 100vh; /* Reduced map height for mobile devices */
     width: 100%;
 }
 body {
