@@ -16,7 +16,7 @@
 
         <script>
             function loadDeviceSpecificResources() {
-                if ('ontouchstart' in window || window.matchMedia("(orientation: portrait)").matches) {
+                if ('ontouchstart' in window && window.matchMedia("(orientation: portrait)").matches && window.innerWidth <= 800 && window.innerHeight <= 600) {
                     document.getElementById("default-css").setAttribute("href", "WTDEW.css");
                     console.log("Mobile CSS loaded");
                 } else {
@@ -49,7 +49,7 @@
             <button id="infoButton" class="E-WasteInfo">
                 <img class="InfoImg" src="https://github.com/Newwich/WTDEW/blob/main/info.png?raw=true">
             </button>
-            <a class="form" href="https://forms.gle/DcdzfZXA6CNq4s977" target="blank">
+            <a class="form" href="https://forms.gle/DcdzfZXA6CNq4s977">
                 <img class="formIMG" src="https://github.com/Newwich/WTDEW/blob/a401a590b283baee5256445f0f82b375f2806d35/pngwing.com.png?raw=true">
             </form></a>
             <a class="infocontainer"></a>
