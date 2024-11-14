@@ -16,9 +16,9 @@
 
         <script>
             function loadDeviceSpecificResources() {
-                if ('ontouchstart' in window || window.matchMedia("(pointer: coarse)").matches) {
+                if ('ontouchstart' in window || window.matchMedia("(orientation: portrait)").matches) {
                     document.getElementById("default-css").setAttribute("href", "WTDEW.css");
-                    console.log("Mobile CSS loaded (dead)");
+                    console.log("Mobile CSS loaded");
                 } else {
                     document.getElementById("default-css").setAttribute("href", "WTDEW.css");
                     console.log("Desktop CSS loaded");
