@@ -95,8 +95,9 @@ nav {
 .form{
     cursor: pointer;
     position: absolute;
+    text-decoration: none;
     margin-top: 13px;
-    margin-left: 400;
+    margin-left: 400px;
     border:none ;
     border-radius: 20px;
     width:auto;
