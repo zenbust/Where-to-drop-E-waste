@@ -93,7 +93,7 @@ nav {
     background-color: #f0f0f0;
 }
 .Contactus{
-    position: fixed;
+    position: absolute;
     font-size: 19px;
     right: 85px;
     top: 2.75%;
