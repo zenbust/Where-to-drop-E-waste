@@ -97,7 +97,7 @@ nav {
     position: absolute;
     text-decoration: none;
     margin-top: 13px;
-    margin-left: 425px;
+    margin-left: 430px;
     border:none ;
     border-radius: 20px;
     width:auto;
@@ -107,8 +107,8 @@ nav {
     transform: scale(1.1);
 }
 .formIMG{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 .Contactus{
     position: absolute;
