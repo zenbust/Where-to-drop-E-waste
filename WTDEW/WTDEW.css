@@ -103,6 +103,9 @@ nav {
     width:auto;
     background-color:transparent;
 }
+.form:hover{
+    transform: scale(1.1);
+}
 .formIMG{
     width: 30px;
     height: 30px;
