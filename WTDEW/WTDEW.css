@@ -96,7 +96,7 @@ nav {
     position: absolute;
     font-size: 19px;
     right: 85px;
-    top: 2%;
+    margin-top: 2%;
     background-color: transparent;
     color: green;
     border-radius:10px;
