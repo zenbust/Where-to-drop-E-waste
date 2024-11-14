@@ -101,7 +101,11 @@ nav {
     border:none ;
     border-radius: 20px;
     width:auto;
-    background-color: transparent;
+    background-color:transparent;
+}
+.formIMG{
+    width: 40px;
+    height: 40px;
 }
 .Contactus{
     position: absolute;
