@@ -92,6 +92,16 @@ nav {
 .suggestion:hover {
     background-color: #f0f0f0;
 }
+.form{
+    cursor: pointer;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: 400;
+    border:none ;
+    border-radius: 20px;
+    width:auto;
+    background-color: skyblue;
+}
 .Contactus{
     position: absolute;
     font-size: 19px;
