@@ -15,15 +15,18 @@
         <link rel="stylesheet" id="default-css" href="WTDEW.css">
 
         <script>
-            function loadDeviceSpecificResources() {
-                if ('ontouchstart' in window && window.matchMedia("(orientation: portrait)").matches && window.innerWidth <= 800 && window.innerHeight <= 600) {
-                    document.getElementById("default-css").setAttribute("href", "WTDEW.css");
-                    console.log("Mobile CSS loaded");
-                } else {
-                    document.getElementById("default-css").setAttribute("href", "WTDEW.css");
-                    console.log("Desktop CSS loaded");
-                }
+            function isPhoneInPortraitMode() {
+                const isPhone = /Android|iPhone/i.test(navigator.userAgent) && !/iPad|Tablet/i.test(navigator.userAgent);
+                const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+                return isPhone && isPortrait;
             }
+
+            function loadDeviceSpecificResources() {
+                const cssFile = isPhoneInPortraitMode() ? "WTDEW-mobile.css" : "WTDEW.css";
+                document.getElementById("default-css").setAttribute("href", cssFile);
+                console.log(`${cssFile} loaded`);
+            }
+
             window.addEventListener('resize', loadDeviceSpecificResources);
             window.addEventListener('load', loadDeviceSpecificResources);
         </script>
