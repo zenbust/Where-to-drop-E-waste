@@ -58,7 +58,7 @@ nav {
     border-radius: 20px;
     width:auto;
     background-color: skyblue;
-    bottom: 5vh;
+    bottom: 7vh;
     left: 52vh;
 }
 .E-WasteInfo:hover{
@@ -99,8 +99,8 @@ nav {
     border-radius: 20px;
     width:auto;
     background-color:transparent;
-    left: 55vh;
-    top: 3vh;
+    left: 53.5vh;
+    top: 4vh;
 }
 .form:hover{
     transform: scale(1.1);
