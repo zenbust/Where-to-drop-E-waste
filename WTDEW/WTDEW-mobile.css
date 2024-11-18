@@ -112,8 +112,6 @@ nav {
 .Contactus{
     position: absolute;
     font-size: 19px;
-    right: 85px;
-    bottom: 2%;
     background-color: transparent;
     color: green;
     border-radius:10px;
@@ -122,11 +120,9 @@ nav {
 }
 .LineOA{
     position: absolute;
-    right: 40px;
     background-color: transparent;
     border: none;
     color: white;
-    bottom: 2%;
 }
 .suggest-container {
     position: absolute;
@@ -146,10 +142,8 @@ nav {
     position: absolute;
     background-color: rgba(163, 163, 163, 0.8);
     padding: 25px;
-    right: 20px;
     border-radius: 20px;
     width: 100px;
-    bottom: 2%;
 
 }
 .LineImg{
