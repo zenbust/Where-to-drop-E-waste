@@ -117,16 +117,16 @@ nav {
     border-radius:10px;
     box-sizing: border-box;
     text-decoration: none;
-    top: 86.75vh;
-    left: 11.5vh;
+    top: 86.5vh;
+    left: 12.5vh;
 }
 .LineOA{
     position: absolute;
     background-color: transparent;
     border: none;
     color: white;
-    top: 86.75vh;
-    left: 13.5vh;
+    top: 86.5vh;
+    left: 15.5vh;
 }
 .suggest-container {
     position: absolute;
