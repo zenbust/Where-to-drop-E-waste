@@ -99,8 +99,8 @@ nav {
     border-radius: 20px;
     width:auto;
     background-color:transparent;
-    left: 55vh;
-    top: 10vh;
+    left: 56vh;
+    top: 3vh;
 }
 .form:hover{
     transform: scale(1.1);
