@@ -117,14 +117,16 @@ nav {
     border-radius:10px;
     box-sizing: border-box;
     text-decoration: none;
-    top: 95vh;
+    top: 80vh;
+    left: 15vh;
 }
 .LineOA{
     position: absolute;
     background-color: transparent;
     border: none;
     color: white;
-    top: 95vh;
+    top: 80vh;
+    left: 15vh;
 }
 .suggest-container {
     position: absolute;
@@ -146,7 +148,8 @@ nav {
     padding: 25px;
     border-radius: 20px;
     width: 100px;
-    top: 95vh;
+    top: 80vh;
+    left: 15vh;
 }
 .LineImg{
     width: 40px;
