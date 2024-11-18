@@ -16,8 +16,10 @@
 
         <script>
             function isPhoneInPortraitMode() {
-                const isPhone = /Android|iPhone/i.test(navigator.userAgent) && !/iPad|Tablet/i.test(navigator.userAgent);
+                const userAgent = navigator.userAgent;
+                const isPhone = /Android|iPhone/i.test(userAgent) && !/iPad|Tablet|Macintosh/i.test(userAgent);
                 const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
                 return isPhone && isPortrait;
             }
 
