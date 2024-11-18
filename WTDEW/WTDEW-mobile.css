@@ -51,6 +51,9 @@ nav {
     margin-top: 9px;
     margin-left: 177px;
 }
+.SearchButton:hover {
+    background-color: #013975;
+}
 .E-WasteInfo{
     cursor: pointer;
     position: absolute;
