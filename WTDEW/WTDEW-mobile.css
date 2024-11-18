@@ -1,6 +1,6 @@
 #map {
     height: 100vh;
-    width: 60vh;
+    width: 61vh;
 }
 body {
     font-family: Arial, sans-serif;
@@ -56,7 +56,7 @@ nav {
     cursor: pointer;
     position: absolute;
     margin-top: 13px;
-    margin-left: 380px;
+    margin-left: 185px;
     border:none ;
     border-radius: 20px;
     width:auto;
@@ -97,7 +97,7 @@ nav {
     position: absolute;
     text-decoration: none;
     margin-top: 13px;
-    margin-left: 430px;
+    margin-left: 215px;
     border:none ;
     border-radius: 20px;
     width:auto;
@@ -272,3 +272,4 @@ nav {
     display: block;
     opacity: 1;
 }
+
