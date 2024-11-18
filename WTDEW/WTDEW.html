@@ -16,11 +16,18 @@
 
         <script>
             function isPhoneInPortraitMode() {
-                const userAgent = navigator.userAgent;
-                const isPhone = /Android|iPhone/i.test(userAgent) && !/iPad|Tablet|Macintosh/i.test(userAgent);
+                const userAgent = navigator.userAgent.toLowerCase();
+                const platform = navigator.platform.toLowerCase();
+
+                const isPhone =
+                    (/android|iphone/i.test(userAgent) && !/ipad|tablet/i.test(userAgent)) &&
+                    !(/macintosh/i.test(userAgent) && 'ontouchend' in document);
+
+                const isPhoneScreenSize = Math.min(window.screen.width, window.screen.height) < 768;
+
                 const isPortrait = window.matchMedia("(orientation: portrait)").matches;
 
-                return isPhone && isPortrait;
+                return isPhone && isPhoneScreenSize && isPortrait;
             }
 
             function loadDeviceSpecificResources() {
