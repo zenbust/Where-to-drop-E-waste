@@ -109,7 +109,7 @@ nav {
     width: 35px;
     height: 35px;
 }
-.line.Contactus{
+.Contactus{
     position: absolute;
     font-size: 19px;
     background-color: transparent;
@@ -118,7 +118,7 @@ nav {
     box-sizing: border-box;
     text-decoration: none;
 }
-.line.LineOA{
+.LineOA{
     position: absolute;
     background-color: transparent;
     border: none;
@@ -138,7 +138,7 @@ nav {
     margin-left: 154px;
     max-width: 310px;
 }
-.line.infocontainer{
+.infocontainer{
     position: absolute;
     background-color: rgba(163, 163, 163, 0.8);
     padding: 25px;
