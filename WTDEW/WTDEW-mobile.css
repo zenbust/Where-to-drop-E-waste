@@ -82,7 +82,7 @@ nav {
     max-height: 1000px;
     overflow-y: auto;
     margin-left: 119px;
-    max-width: 320px;
+    max-width: 177px;
 }
 .suggestion {
     padding: 10px;
@@ -114,7 +114,7 @@ nav {
     position: absolute;
     font-size: 19px;
     right: 85px;
-    margin-top: 2%;
+    margin-bottom: 2%;
     background-color: transparent;
     color: green;
     border-radius:10px;
@@ -128,7 +128,7 @@ nav {
     background-color: transparent;
     border: none;
     color: white;
-    margin-top: 5px;
+    margin-bottom: 2%;
 }
 .suggest-container {
     position: absolute;
@@ -151,6 +151,7 @@ nav {
     right: 20px;
     border-radius: 20px;
     width: 100px;
+    margin-bottom: 2%;
 
 }
 .LineImg{
