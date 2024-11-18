@@ -123,6 +123,7 @@ nav {
     background-color: transparent;
     border: none;
     color: white;
+    top: 100px;
 }
 .suggest-container {
     position: absolute;
