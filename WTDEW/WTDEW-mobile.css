@@ -54,8 +54,6 @@ nav {
 .E-WasteInfo{
     cursor: pointer;
     position: absolute;
-    margin-top: 13px;
-    margin-left: 185px;
     border:none ;
     border-radius: 20px;
     width:auto;
@@ -95,8 +93,6 @@ nav {
     cursor: pointer;
     position: absolute;
     text-decoration: none;
-    margin-top: 13px;
-    margin-left: 215px;
     border:none ;
     border-radius: 20px;
     width:auto;
